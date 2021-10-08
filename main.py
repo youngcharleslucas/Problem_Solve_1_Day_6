@@ -99,5 +99,66 @@ Create a function that capitalizes every word of string:
 '''
 create a string of code that can be compressed
 
+function for compressing
+    list of compressed
+    count = 1
+    for valueOfList in string:
+        if valueOfList is != to previousValueOfList:
+            add valueOfList to list of compressed
+        elif valueOfList is == to previousValueOfList:
+            add 1 to count
+        else:
+            count = 1
 
 '''
+
+not_compressed = "llloooo"
+
+def compressed_func (not_compressed):
+    list_compressed = ""
+    count = 1
+    index = range(len(not_compressed))
+    for letter in range(len(not_compressed)):
+        if letter == 0: list_compressed += not_compressed[letter]
+        elif letter + 1 == index: 
+            count += 1 
+            list_compressed += str(count)
+        elif not_compressed[letter] != not_compressed[letter-1]:
+            list_compressed += str(count)
+            list_compressed += not_compressed[letter]
+            count = 1
+        elif not_compressed[letter] == not_compressed[letter-1]:
+            count += 1 
+        else: count = 1
+    return list_compressed
+
+compressed = compressed_func(not_compressed)
+print(compressed)
+
+# ind = 0
+
+# def gen_compressed_str(string):
+#   global ind
+#   comp_str = ""
+#   len_str = len(string)
+#   while (ind != len_str):
+#     count = 1
+
+#     while ((ind < (len_str-1)) and (string[ind] == string[ind+1])):
+#       count = count + 1
+#       ind = ind + 1
+
+
+#     if (count == 1):
+#       comp_str = comp_str + str(string[ind])
+#     else:
+#       comp_str = comp_str + str(string[ind]) + str(count)
+    
+#     ind = ind + 1
+
+#   return comp_str
+      
+
+
+# string = "wwwwaaadexxxxxxywww"
+# print(gen_compressed_str(string))
