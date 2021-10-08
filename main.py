@@ -42,15 +42,15 @@ Create a function to reverse the string with string as argument
     for loop the string
 
 """
-# string_1 = input("I can say things backwards. Ask me a word to say! ")
+string_1 = input("I can say things backwards. Ask me a word to say! ")
 
-# def reverse_string (string_1):
-#     reverse_word = ""
-#     for letter in range(len(string_1)-1, -1, -1):
-#         reverse_word += string_1[letter]
-#     print(reverse_word)
+def reverse_string (string_1):
+    reverse_word = ""
+    for letter in range(len(string_1)-1, -1, -1):
+        reverse_word += string_1[letter]
+    print(reverse_word)
 
-# reverse_string(string_1)
+reverse_string(string_1)
 
 
 
@@ -67,28 +67,28 @@ Create a function that capitalizes every word of string:
 
 """
 
-# capitalize_input = input("Give me a sentence to capitalize! ")
+capitalize_input = input("Give me a sentence to capitalize! ")
 
-# def capitalize_string (capitalize_input):
-#     capital = False
-#     sentence = ""
-#     for word_lower in range(len(capitalize_input)):
-#         if capitalize_input[word_lower] == " ":
-#             capital = True
-#             sentence += capitalize_input[word_lower]
-#         elif capital == True:
-#             sentence += capitalize_input[word_lower].capitalize()
-#             capital = False
-#         elif word_lower == 0:
-#             sentence += capitalize_input[word_lower].capitalize()
-#         else:
-#             sentence += capitalize_input[word_lower]
-#     print(sentence)
-
-
+def capitalize_string (capitalize_input):
+    capital = False
+    sentence = ""
+    for word_lower in range(len(capitalize_input)):
+        if capitalize_input[word_lower] == " ":
+            capital = True
+            sentence += capitalize_input[word_lower]
+        elif capital == True:
+            sentence += capitalize_input[word_lower].capitalize()
+            capital = False
+        elif word_lower == 0:
+            sentence += capitalize_input[word_lower].capitalize()
+        else:
+            sentence += capitalize_input[word_lower]
+    print(sentence)
 
 
-# capitalize_string (capitalize_input)
+
+
+capitalize_string (capitalize_input)
 
 # I know the goal is to be efficient with the amount of code we use, but I am proud of how much extra code I had to use to make this work
 
@@ -135,3 +135,29 @@ def compressed_func (not_compressed):
 compressed = compressed_func(not_compressed)
 print(compressed)
 
+
+# 4. Palindrome------------------------------------------------------
+'''
+Ask for user input if a word is a palindrome
+    capitalize user input
+
+Function that compares input to reversInput:
+    planidrome list
+    for letter in range(len(input)-1, -1,-1)
+        add letter to palindrome list
+        if palindrome list == input:
+            print is palindrome
+        else: print not palindrome
+
+'''
+
+palindrome_input = input("Tell me a palindrome! ").upper()
+
+def palindrome_check(palindrome_input):
+    palindrome = ""
+    for letter in range(len(palindrome_input)-1, -1, -1):
+        palindrome = palindrome + palindrome_input[letter]
+    if palindrome == palindrome_input: print("That is a palindrome!")
+    else: print("I don't think that is a palindrome")
+
+palindrome_check(palindrome_input)
